@@ -1,0 +1,25 @@
+.wrapper {
+    text-align: center;
+    margin-top: 4fr;
+    margin-left: 4fr;
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+}
+
+
+/*.wrapper {*/
+/*  padding: 100px;*/
+/*  text-align: center;*/
+/*  display: grid;*/
+/*  grid-template-columns: 3fr 1fr;*/
+/*  grid-gap: 20px;*/
+/*  grid-template-areas: "h" "n c";*/
+/*  grid-auto-rows: minmax(100px, auto);*/
+/*}*/
+
+.table {
+    background-color: cornflowerblue;
+    font-size: 40px;
+
+}
