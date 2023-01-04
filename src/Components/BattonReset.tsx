@@ -1,17 +1,24 @@
 import React from 'react'
-import {MouseEvent} from 'react';
+import {resetCounterAC} from '../redux/counterReducer';
+import {useDispatch, useSelector} from 'react-redux';
+import {AppStoreType} from '../redux/store';
 
-type ButtonResetPropsType = {
-    counter: number
-    resetValue:()=>void
-}
+// type ButtonResetPropsType = {
+//     counter: number
+// }
+
 const min = 0
 
-export const ButtonReset = (props: ButtonResetPropsType) => {
-    const onClickButtonHandler = (event: MouseEvent) => {
-        props.resetValue()
+export const ButtonReset = () => {
+
+    const counter = useSelector<AppStoreType, number>(state => state.counter.counter)
+    const dispatch = useDispatch()
+
+    const onClickButtonHandler = () => {
+        dispatch(resetCounterAC())
     }
+
     return(
-        <button disabled={props.counter === min} onClick={onClickButtonHandler}>reset</button>
+        <button disabled={counter === min} onClick={onClickButtonHandler}>reset</button>
     )
 }

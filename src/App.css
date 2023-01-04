@@ -1,25 +1,17 @@
 .wrapper {
+    display: flex;
+    justify-content: center;
     text-align: center;
-    margin-top: 4fr;
-    margin-left: 4fr;
-    font-size: 20px;
+    padding-top: 200px;
+    font-size: 40px;
     font-weight: bold;
     color: red;
 }
-
-
-/*.wrapper {*/
-/*  padding: 100px;*/
-/*  text-align: center;*/
-/*  display: grid;*/
-/*  grid-template-columns: 3fr 1fr;*/
-/*  grid-gap: 20px;*/
-/*  grid-template-areas: "h" "n c";*/
-/*  grid-auto-rows: minmax(100px, auto);*/
-/*}*/
-
-.table {
-    background-color: cornflowerblue;
-    font-size: 40px;
-
+.my-app {
+    border: 1px solid green;
+    width: 200px;
+    height: 200px;
+    padding-top: 100px;
+    background: #f5d365;
+    border-radius: 15px;
 }

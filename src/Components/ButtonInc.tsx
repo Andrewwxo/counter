@@ -1,21 +1,26 @@
 import React from 'react'
-import {MouseEvent} from 'react';
+import './button.module.css'
+import {useDispatch, useSelector} from 'react-redux';
+import {AppStoreType} from '../redux/store';
+import {counterAC} from '../redux/counterReducer';
 
-type ButtonIncPropsType = {
-    counter: number
-    addValue: () => void
-
-}
+// type ButtonIncPropsType = {
+//     counter: number
+// }
 const max = 5
 
-export const ButtonInc = (props: ButtonIncPropsType) => {
+export const ButtonInc = () => {
 
-    const onClickHandler = (event: MouseEvent) => {
-        props.addValue()
+    const counter = useSelector<AppStoreType, number>(state => state.counter.counter)
+    const dispatch = useDispatch()
+
+    const onClickHandler = () => {
+        dispatch(counterAC())
     }
-    const buttonClass = props.counter === max ? "red" : ""
+    const buttonClass = counter === max ? "red" : ""
+
     return (
-        <button className={buttonClass} disabled={props.counter === max}
+        <button className={buttonClass} disabled={counter === max}
                 onClick={onClickHandler}>inc</button>
     )
 }
